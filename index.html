@@ -3,47 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevLingo - Yazılım Öğren</title>
+    <title>DevLingo - Yazılım Kampı</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-container">
-        <!-- Üst Bar -->
         <header class="stats-header">
-            <div class="stat-item" title="Günlük Seri">🔥 <span id="streak-val">0</span></div>
-            <div class="stat-item" title="Tecrübe Puanı">💎 <span id="xp-val">0</span></div>
-            <div class="stat-item" title="Seviye">⭐ Lvl <span id="lvl-val">1</span></div>
-            <div class="stat-item" title="Seri Dondurma">❄️ <span id="freeze-val">0</span></div>
+            <div class="stat-item">🔥 <span id="streak-val">0</span> Gün</div>
+            <div class="stat-item">⭐ Lvl <span id="lvl-val">1</span></div>
+            <div class="stat-item">❄️ <span id="freeze-val">0</span></div>
         </header>
 
-        <!-- İlerleme Çubuğu -->
         <div class="progress-wrapper">
             <div id="progress-fill" class="progress-fill"></div>
         </div>
 
-        <!-- Ana İçerik -->
         <main id="content-area">
+            <!-- Ders Seçim Ekranı -->
             <div id="home-screen">
-                <h2 id="day-title">1. Gün: Başlangıç</h2>
-                <div class="card" id="main-task-card">
-                    <h3 id="task-topic">Değişkenler nedir?</h3>
-                    <p id="task-desc">Yazılımın temel taşlarını öğrenmeye hazır mısın?</p>
-                    <button onclick="startTask()" id="start-btn">Görevi Başlat</button>
-                </div>
-                <div id="exam-area" class="hidden">
-                    <button class="exam-btn" onclick="startWeeklyExam()">🏆 Haftalık Sınavı Başlat!</button>
-                </div>
+                <h2 id="day-title">Öğrenmeye Hazır Mısın?</h2>
+                <div id="lesson-list"></div>
             </div>
 
-            <!-- Ders/Sınav Ekranı (Gizli) -->
-            <div id="action-screen" class="hidden">
-                <h3 id="question-text">Soru buraya gelecek?</h3>
-                <div id="options-container"></div>
+            <!-- Öğretme Ekranı -->
+            <div id="teaching-screen" class="hidden">
+                <h2 id="teach-title">Konu Başlığı</h2>
+                <div id="teach-content" class="content-box"></div>
+                <button onclick="goToQuiz()">Anladım, Test Et!</button>
+            </div>
+
+            <!-- Soru/Yazma Ekranı -->
+            <div id="quiz-screen" class="hidden">
+                <h3 id="question-text">Soru?</h3>
+                <div id="quiz-input-area"></div>
+                <div id="feedback" class="hidden"></div>
+                <button id="check-btn" onclick="checkAnswer()">Kontrol Et</button>
             </div>
         </main>
-
-        <!-- Bildirim Alanı -->
-        <div id="toast" class="hidden"></div>
     </div>
     <script src="app.js"></script>
 </body>
