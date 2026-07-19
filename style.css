@@ -1,0 +1,29 @@
+:root {
+    --primary: #58cc02;
+    --secondary: #1cb0f6;
+    --warn: #ff9600;
+    --bg: #ffffff;
+    --text: #4b4b4b;
+}
+
+body { font-family: 'DIN Round', sans-serif; background-color: #f7f7f7; margin: 0; color: var(--text); }
+.app-container { max-width: 450px; margin: 0 auto; background: white; min-height: 100vh; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box; }
+
+.stats-header { display: flex; justify-content: space-around; padding: 10px; border-bottom: 2px solid #e5e5e5; font-weight: bold; font-size: 1.2rem; }
+
+.progress-wrapper { background: #e5e5e5; height: 12px; border-radius: 10px; margin: 20px 0; overflow: hidden; }
+.progress-fill { background: var(--primary); height: 100%; width: 0%; transition: 0.5s; }
+
+.card { border: 2px solid #e5e5e5; border-radius: 15px; padding: 20px; margin-top: 20px; text-align: center; }
+button { 
+    background: var(--primary); color: white; border: none; padding: 15px; 
+    border-radius: 15px; width: 100%; font-weight: bold; font-size: 1.1rem;
+    cursor: pointer; box-shadow: 0 4px 0 #46a302; margin-top: 10px;
+}
+button:active { transform: translateY(2px); box-shadow: 0 2px 0 #46a302; }
+
+.option-btn { background: white; color: var(--text); border: 2px solid #e5e5e5; box-shadow: 0 3px 0 #e5e5e5; margin-bottom: 10px; }
+.option-btn:hover { background: #ddf4ff; border-color: var(--secondary); }
+
+.hidden { display: none; }
+.exam-btn { background: var(--secondary); box-shadow: 0 4px 0 #1899d6; }
